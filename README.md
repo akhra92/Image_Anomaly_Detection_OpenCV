@@ -10,6 +10,12 @@ A lightweight defect detection pipeline built with OpenCV. It analyzes objects i
 4. **Annotate** the image with color-coded bounding boxes and labels (green for Good, red for Defective).
 5. **Save** the annotated result.
 
+## Sample Results
+
+| Input Image | Segmentation Mask | Predicted Output |
+|:-----------:|:-----------------:|:----------------:|
+| ![Input](samples/image.png) | ![Mask](samples/mask.png) | ![Output](samples/output.png) |
+
 ## Project Structure
 
 ```
