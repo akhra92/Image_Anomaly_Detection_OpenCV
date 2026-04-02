@@ -1,6 +1,6 @@
-IMAGE_DIR = 'image'
-MASK_DIR = 'mask'
-OUTPUT_DIR = 'results'
+IMAGE_DIR = 'samples/images'
+MASK_DIR = 'samples/masks'
+OUTPUT_DIR = 'samples/outputs'
 
 # Pixels with intensity below this are considered dark/black
 DARK_PIXEL_THRESHOLD = 60

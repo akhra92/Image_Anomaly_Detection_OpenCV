@@ -12,9 +12,11 @@ A lightweight defect detection pipeline built with OpenCV. It analyzes objects i
 
 ## Sample Results
 
-| Input Image | Segmentation Mask | Predicted Output |
-|:-----------:|:-----------------:|:----------------:|
-| ![Input](samples/image.png) | ![Mask](samples/mask.png) | ![Output](samples/output.png) |
+| Input Image | Predicted Output | Segmentation Mask |
+|:-----------:|:----------------:|:-----------------:|
+| ![Input](samples/images/0.png) | ![Output](samples/outputs/0.png) | ![Mask](samples/masks/0.png) |
+| ![Input](samples/images/10.png) | ![Output](samples/outputs/10.png) | ![Mask](samples/masks/10.png) |
+| ![Input](samples/images/60.png) | ![Output](samples/outputs/60.png) | ![Mask](samples/masks/60.png) |
 
 ## Project Structure
 
