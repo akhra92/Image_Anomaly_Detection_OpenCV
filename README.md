@@ -2,6 +2,8 @@
 
 A lightweight defect detection pipeline built with OpenCV. It analyzes objects in images using pre-generated segmentation masks and classifies each object as **Good** or **Defective** based on dark pixel intensity analysis.
 
+**[Live Demo on Streamlit Cloud](#)** <!-- TODO: replace # with your Streamlit Cloud URL -->
+
 ## How It Works
 
 1. **Load** a color image and its corresponding binary segmentation mask.
@@ -22,14 +24,20 @@ A lightweight defect detection pipeline built with OpenCV. It analyzes objects i
 
 ```
 Traditional_CV/
-├── main.py                  # Entry point — orchestrates the pipeline
+├── app.py                   # Streamlit web app
+├── main.py                  # CLI entry point — orchestrates the pipeline
 ├── config.py                # Thresholds and directory paths
+├── requirements.txt         # Python dependencies
 ├── detector/
 │   ├── preprocessing.py     # Mask binarization & contour extraction
 │   ├── classifier.py        # Dark-pixel defect classification
 │   └── visualizer.py        # Bounding box & label drawing
-└── utils/
-    └── io.py                # Image/mask loading & result saving
+├── utils/
+│   └── io.py                # Image/mask loading & result saving
+└── samples/
+    ├── images/              # Sample input images
+    ├── masks/               # Sample segmentation masks
+    └── outputs/             # Sample predicted outputs
 ```
 
 ## Requirements
@@ -37,14 +45,27 @@ Traditional_CV/
 - Python 3.7+
 - OpenCV (`cv2`)
 - NumPy
+- Streamlit
 
 Install dependencies:
 
 ```bash
-pip install opencv-python numpy
+pip install -r requirements.txt
 ```
 
 ## Usage
+
+### Streamlit App
+
+Run the interactive web app:
+
+```bash
+streamlit run app.py
+```
+
+Upload your own image and mask, or view the default sample results.
+
+### CLI Pipeline
 
 1. Place your input images in the `samples/images/` directory.
 2. Place the corresponding segmentation masks (same filenames) in the `samples/masks/` directory.
