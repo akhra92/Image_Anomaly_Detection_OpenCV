@@ -86,5 +86,5 @@ All parameters are defined in `config.py`:
 | `IMAGE_DIR` | `image` | Directory containing input images |
 | `MASK_DIR` | `mask` | Directory containing segmentation masks |
 | `OUTPUT_DIR` | `results` | Directory for saving annotated results |
-| `DARK_PIXEL_THRESHOLD` | `60` | Pixel intensity below which a pixel is considered dark |
+| `DARK_PIXEL_THRESHOLD` | `70` | Pixel intensity below which a pixel is considered dark |
 | `DARK_PIXEL_RATIO_THRESHOLD` | `0.03` | Minimum dark pixel ratio to classify an object as defective |
