@@ -46,15 +46,15 @@ pip install opencv-python numpy
 
 ## Usage
 
-1. Place your input images in the `image/` directory.
-2. Place the corresponding segmentation masks (same filenames) in the `mask/` directory.
+1. Place your input images in the `samples/images/` directory.
+2. Place the corresponding segmentation masks (same filenames) in the `samples/masks/` directory.
 3. Run the pipeline:
 
 ```bash
 python main.py
 ```
 
-4. Annotated results will be saved to the `results/` directory.
+4. Annotated results will be saved to the `samples/outputs/` directory.
 
 ## Configuration
 
