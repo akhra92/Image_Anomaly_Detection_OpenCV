@@ -17,6 +17,11 @@ def load_image_and_mask(image_dir, mask_dir, filename):
     image = cv2.imread(image_path)
     mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
 
+    if image is None:
+        raise FileNotFoundError(f"Could not load image: {image_path}")
+    if mask is None:
+        raise FileNotFoundError(f"Could not load mask: {mask_path}")
+
     return image, mask
 
 
