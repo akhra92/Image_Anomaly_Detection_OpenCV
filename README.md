@@ -63,7 +63,7 @@ Run the interactive web app:
 streamlit run app.py
 ```
 
-Upload your own image and mask, or view the default sample results.
+Upload your own image and mask, or view the default sample results. Use the sidebar sliders to tune detection thresholds in real time.
 
 ### CLI Pipeline
 
@@ -83,8 +83,10 @@ All parameters are defined in `config.py`:
 
 | Parameter | Default | Description |
 |---|---|---|
-| `IMAGE_DIR` | `image` | Directory containing input images |
-| `MASK_DIR` | `mask` | Directory containing segmentation masks |
-| `OUTPUT_DIR` | `results` | Directory for saving annotated results |
+| `IMAGE_DIR` | `samples/images` | Directory containing input images |
+| `MASK_DIR` | `samples/masks` | Directory containing segmentation masks |
+| `OUTPUT_DIR` | `samples/outputs` | Directory for saving annotated results |
 | `DARK_PIXEL_THRESHOLD` | `70` | Pixel intensity below which a pixel is considered dark |
 | `DARK_PIXEL_RATIO_THRESHOLD` | `0.03` | Minimum dark pixel ratio to classify an object as defective |
+
+Both thresholds can also be adjusted interactively via the sidebar sliders in the Streamlit app.
