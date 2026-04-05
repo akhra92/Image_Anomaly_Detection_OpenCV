@@ -2,7 +2,7 @@
 
 A lightweight defect detection pipeline built with OpenCV. It analyzes objects in images using pre-generated segmentation masks and classifies each object as **Good** or **Defective** based on dark pixel intensity analysis.
 
-**[Live Demo on Streamlit Cloud](https://imageanomalydetectionopencv.streamlit.app/)** <!-- TODO: replace # with your Streamlit Cloud URL -->
+**[Live Demo on Streamlit Cloud](https://imageanomalydetectionopencv.streamlit.app/)**
 
 ## How It Works
 
