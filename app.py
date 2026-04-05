@@ -3,26 +3,8 @@ import numpy as np
 import streamlit as st
 
 from config import IMAGE_DIR, MASK_DIR, DARK_PIXEL_THRESHOLD, DARK_PIXEL_RATIO_THRESHOLD
-from detector.preprocessing import binarize_mask, extract_contours
-from detector.classifier import classify_contour
-from detector.visualizer import draw_detections
+from main import process_image
 from utils.io import get_image_filenames, load_image_and_mask
-
-
-def process_image(image, mask, dark_thresh, ratio_thresh):
-    """Run defect detection on a single image-mask pair."""
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    binary_mask = binarize_mask(mask)
-    contours = extract_contours(binary_mask)
-
-    detections = [
-        classify_contour(contour, gray, mask.shape,
-                         dark_pixel_threshold=dark_thresh,
-                         dark_pixel_ratio_threshold=ratio_thresh)
-        for contour in contours
-    ]
-
-    return draw_detections(image, detections)
 
 
 def bgr_to_rgb(image):

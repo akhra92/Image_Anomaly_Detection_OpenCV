@@ -1,20 +1,23 @@
 import cv2
 
-from config import IMAGE_DIR, MASK_DIR, OUTPUT_DIR
+from config import IMAGE_DIR, MASK_DIR, OUTPUT_DIR, DARK_PIXEL_THRESHOLD, DARK_PIXEL_RATIO_THRESHOLD
 from utils.io import get_image_filenames, load_image_and_mask, save_result
 from detector.preprocessing import binarize_mask, extract_contours
 from detector.classifier import classify_contour
 from detector.visualizer import draw_detections
 
 
-def process_image(image, mask):
+def process_image(image, mask, dark_thresh=DARK_PIXEL_THRESHOLD,
+                  ratio_thresh=DARK_PIXEL_RATIO_THRESHOLD):
     """Run defect detection on a single image-mask pair."""
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     binary_mask = binarize_mask(mask)
     contours = extract_contours(binary_mask)
 
     detections = [
-        classify_contour(contour, gray, mask.shape)
+        classify_contour(contour, gray, mask.shape,
+                         dark_pixel_threshold=dark_thresh,
+                         dark_pixel_ratio_threshold=ratio_thresh)
         for contour in contours
     ]
 
